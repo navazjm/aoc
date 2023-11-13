@@ -2,6 +2,14 @@
 
 ## Directory Tree
 
+project-root/2015/
+|-- src/
+| |-- day_XX/
+| | |-- main.cpp
+| | |-- input.txt
+| | |-- sample.txt
+|-- README.md
+
 ## Run from source
 
 - CD to desired day
