@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-void partOne(std::vector<std::string> input) {
+void partOne(const std::vector<std::string> &input) {
   long total = 0;
   for (std::string line : input) {
     std::vector<int> dimensions;
@@ -25,7 +25,7 @@ void partOne(std::vector<std::string> input) {
   std::cout << total << std::endl;
 }
 
-void partTwo(std::vector<std::string> input) {
+void partTwo(const std::vector<std::string> &input) {
   long total = 0;
   for (std::string line : input) {
     std::vector<int> dimensions;
@@ -50,10 +50,9 @@ void partTwo(std::vector<std::string> input) {
 }
 
 int main(int argc, char *argv[]) {
-  // Check if a file path is provided as a command-line argument
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " <filename.txt>" << std::endl;
-    return 1; // Exit with an error code
+    return 1;
   }
 
   std::string filename = argv[1];
@@ -68,12 +67,10 @@ int main(int argc, char *argv[]) {
   std::vector<std::string> fileLines;
   std::string line;
 
-  // Read the file line by line and append each line to the string
   while (std::getline(file, line)) {
     fileLines.push_back(line);
   }
 
-  // Close the file
   file.close();
 
   partOne(fileLines);

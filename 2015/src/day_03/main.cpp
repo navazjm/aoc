@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 
-void partOne(std::string input) {
+void partOne(const std::vector<std::string> &input) {
+  std::string s = input[0];
   std::vector<int> cords{0, 0};
   std::set<std::vector<int>> visitedHouses;
-  for (const char &c : input) {
+  for (const char &c : s) {
     switch (c) {
     case '>':
       cords[0]++;
@@ -24,14 +25,15 @@ void partOne(std::string input) {
   std::cout << visitedHouses.size() + 1 << "\n";
 }
 
-void partTwo(std::string input) {
+void partTwo(const std::vector<std::string> &input) {
+  std::string s = input[0];
   std::vector<int> santaCords{0, 0};
   std::vector<int> roboSantaCords{0, 0};
   std::set<std::vector<int>> visitedHouses;
-  for (int i = 0; i < input.length(); i++) {
+  for (int i = 0; i < s.length(); i++) {
     std::vector<int> temp = i % 2 == 0 ? santaCords : roboSantaCords;
     bool isSantaTurn = i % 2 == 0;
-    char c = input[i];
+    char c = s[i];
     switch (c) {
     case '>':
       temp[0]++;
@@ -57,10 +59,9 @@ void partTwo(std::string input) {
 }
 
 int main(int argc, char *argv[]) {
-  // Check if a file path is provided as a command-line argument
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " <filename.txt>" << std::endl;
-    return 1; // Exit with an error code
+    return 1;
   }
   std::string filename = argv[1];
 
@@ -71,15 +72,13 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  std::string fileLines;
+  std::vector<std::string> fileLines;
   std::string line;
 
-  // Read the file line by line and append each line to the string
   while (std::getline(file, line)) {
-    fileLines += line + "\n";
+    fileLines.push_back(line);
   }
 
-  // Close the file
   file.close();
 
   partOne(fileLines);

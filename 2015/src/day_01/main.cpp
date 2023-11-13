@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 
-void partOne(std::string input) {
+void partOne(const std::vector<std::string> &input) {
+  std::string s = input[0];
   int floorCount = 0;
-  for (char c : input) {
+  for (char c : s) {
     if (c == '(') {
       floorCount++;
     } else if (c == ')') {
@@ -12,10 +13,11 @@ void partOne(std::string input) {
   std::cout << floorCount << std::endl;
 }
 
-void partTwo(std::string input) {
+void partTwo(const std::vector<std::string> &input) {
+  std::string s = input[0];
   int floorCount = 0;
-  for (int i = 0; i < input.length(); i++) {
-    char c = input[i];
+  for (int i = 0; i < s.length(); i++) {
+    char c = s[i];
     if (c == '(') {
       floorCount++;
     } else if (c == ')') {
@@ -30,10 +32,9 @@ void partTwo(std::string input) {
 }
 
 int main(int argc, char *argv[]) {
-  // Check if a file path is provided as a command-line argument
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << " <filename.txt>" << std::endl;
-    return 1; // Exit with an error code
+    return 1;
   }
   std::string filename = argv[1];
 
@@ -44,16 +45,13 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  std::string fileContents;
+  std::vector<std::string> fileContents;
   std::string line;
 
-  // Read the file line by line and append each line to the string
   while (std::getline(file, line)) {
-    fileContents += line;
-    fileContents += '\n'; // Optionally, add newline characters between lines
+    fileContents.push_back(line);
   }
 
-  // Close the file
   file.close();
 
   partOne(fileContents);
