@@ -2,6 +2,7 @@
 
 ## Directory Tree
 
+```
 project-root/2015/
 |-- src/
 | |-- day_XX/
@@ -9,6 +10,8 @@ project-root/2015/
 | | |-- input.txt
 | | |-- sample.txt
 |-- README.md
+
+```
 
 ## Run from source
 
