@@ -1,24 +1,11 @@
 #include <bits/stdc++.h>
 
-void solution(std::string input) {
-  int floorCount = 0;
-  for (int i = 0; i < input.length(); i++) {
-    char c = input[i];
-    if (c == '(') {
-      floorCount++;
-    } else if (c == ')') {
-      floorCount--;
-    }
+void partOne(std::string input) { std::cout << input << "\n"; }
 
-    if (floorCount == -1) {
-      std::cout << i + 1 << std::endl;
-      return;
-    }
-  }
-}
+void partTwo(std::string input) { std::cout << input << "\n"; }
 
 int main() {
-  std::string filename = "2015/01/input.txt";
+  std::string filename = "./input.txt";
 
   std::ifstream file(filename);
 
@@ -39,7 +26,8 @@ int main() {
   // Close the file
   file.close();
 
-  solution(fileContents);
+  partOne(fileContents);
+  partTwo(fileContents);
 
   return 0;
 }

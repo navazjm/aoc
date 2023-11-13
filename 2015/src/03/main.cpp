@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 
-void solution(std::string input) {
+void partOne(std::string input) {
   std::vector<int> cords{0, 0};
   std::set<std::vector<int>> visitedHouses;
   for (const char &c : input) {
@@ -24,8 +24,40 @@ void solution(std::string input) {
   std::cout << visitedHouses.size() + 1 << "\n";
 }
 
+void partTwo(std::string input) {
+  std::vector<int> santaCords{0, 0};
+  std::vector<int> roboSantaCords{0, 0};
+  std::set<std::vector<int>> visitedHouses;
+  for (int i = 0; i < input.length(); i++) {
+    std::vector<int> temp = i % 2 == 0 ? santaCords : roboSantaCords;
+    bool isSantaTurn = i % 2 == 0;
+    char c = input[i];
+    switch (c) {
+    case '>':
+      temp[0]++;
+      break;
+    case 'v':
+      temp[1]--;
+      break;
+    case '<':
+      temp[0]--;
+      break;
+    case '^':
+      temp[1]++;
+      break;
+    }
+    visitedHouses.insert(temp);
+    if (isSantaTurn) {
+      santaCords = temp;
+    } else {
+      roboSantaCords = temp;
+    }
+  }
+  std::cout << visitedHouses.size() << "\n";
+}
+
 int main() {
-  std::string filename = "2015/03/input.txt";
+  std::string filename = "./input.txt";
 
   std::ifstream file(filename);
 
@@ -45,7 +77,8 @@ int main() {
   // Close the file
   file.close();
 
-  solution(fileLines);
+  partOne(fileLines);
+  partTwo(fileLines);
 
   return 0;
 }

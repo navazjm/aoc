@@ -1,6 +1,31 @@
 #include <bits/stdc++.h>
 
-void solution(std::vector<std::string> input) {
+void partOne(std::vector<std::string> input) {
+  long total = 0;
+  for (std::string line : input) {
+    std::vector<int> dimensions;
+    std::istringstream ss(line);
+    std::string token;
+
+    while (std::getline(ss, token, 'x')) {
+      dimensions.push_back(std::stoi(token));
+    }
+
+    int l = dimensions[0];
+    int w = dimensions[1];
+    int h = dimensions[2];
+    int s1 = l * w;
+    int s2 = h * w;
+    int s3 = h * l;
+    int minimumValue = std::min(s1, std::min(s2, s3));
+    int area = (2 * l * w) + (2 * w * h) + (2 * h * l) + minimumValue;
+    total += area;
+  }
+
+  std::cout << total << std::endl;
+}
+
+void partTwo(std::vector<std::string> input) {
   long total = 0;
   for (std::string line : input) {
     std::vector<int> dimensions;
@@ -25,7 +50,7 @@ void solution(std::vector<std::string> input) {
 }
 
 int main() {
-  std::string filename = "2015/02/input.txt";
+  std::string filename = "./input.txt";
 
   std::ifstream file(filename);
 
@@ -45,7 +70,8 @@ int main() {
   // Close the file
   file.close();
 
-  solution(fileLines);
+  partOne(fileLines);
+  partTwo(fileLines);
 
   return 0;
 }
