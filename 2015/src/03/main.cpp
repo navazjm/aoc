@@ -56,8 +56,13 @@ void partTwo(std::string input) {
   std::cout << visitedHouses.size() << "\n";
 }
 
-int main() {
-  std::string filename = "./input.txt";
+int main(int argc, char *argv[]) {
+  // Check if a file path is provided as a command-line argument
+  if (argc != 2) {
+    std::cerr << "Usage: " << argv[0] << " <filename.txt>" << std::endl;
+    return 1; // Exit with an error code
+  }
+  std::string filename = argv[1];
 
   std::ifstream file(filename);
 
