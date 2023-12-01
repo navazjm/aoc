@@ -1,3 +1,4 @@
+#include "aoc.h"
 #include "day_01/day_01.h"
 #include <bits/stdc++.h>
 
@@ -20,18 +21,11 @@ int main(int argc, char *argv[]) {
   }
 
   std::string filename = argv[3];
-  std::ifstream file(filename);
-  if (!file.is_open()) {
+  std::vector<std::string> *fileContents = AOC::Get_File_Contents(filename);
+  if (!fileContents) {
     std::cerr << "Failed to open the file: " << filename << std::endl;
     return 1;
   }
-
-  std::vector<std::string> fileContents;
-  std::string line;
-  while (std::getline(file, line)) {
-    fileContents.push_back(line);
-  }
-  file.close();
 
   switch (day) {
   case 1:
@@ -44,6 +38,8 @@ int main(int argc, char *argv[]) {
     std::cout << "Could not find solution to Day " << day << " Part " << part
               << ".\n";
   }
+
+  delete fileContents;
 
   return 0;
 }

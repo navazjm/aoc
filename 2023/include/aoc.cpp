@@ -1,13 +1,22 @@
 #include "aoc.h"
 
-namespace AOC {
-/* Split
- * @param str - string value to split
- * @param delimiter - char to split on
- * @return a vector of substrings
- */
-std::vector<std::string> split(const std::string &str, const char delimiter) {
+std::vector<std::string> AOC::Split(const std::string &str,
+                                    const char delimiter) {
   return {};
 }
 
-} // namespace AOC
+std::vector<std::string> *AOC::Get_File_Contents(const std::string &filename) {
+  std::ifstream file(filename);
+  if (!file.is_open()) {
+    return nullptr;
+  }
+
+  std::vector<std::string> *fileContents = new std::vector<std::string>;
+  std::string line;
+  while (std::getline(file, line)) {
+    fileContents->push_back(line);
+  }
+  file.close();
+
+  return fileContents;
+}
