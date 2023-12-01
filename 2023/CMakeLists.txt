@@ -12,16 +12,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES
     src/main.cpp
     src/day_01/day_01.cpp
-    src/day_01/day_01.h
+    include/aoc.cpp
 )
 
 # Header files
-set(HEADERS
-    include/aoc.h
-)
+include_directories(include)
+
+# Exclude the template folder
+list(APPEND EXCLUDED_FOLDERS "template")
+foreach(EXCLUDED_FOLDER ${EXCLUDED_FOLDERS})
+    file(GLOB EXCLUDED_FILES "${CMAKE_SOURCE_DIR}/${EXCLUDED_FOLDER}/*")
+    list(REMOVE_ITEM SOURCES ${EXCLUDED_FILES})
+endforeach()
 
 # Add executable target
-add_executable(aoc_2023 ${SOURCES} ${HEADERS})
-
-# Include directories
-target_include_directories(aoc_2023 PRIVATE include)
+add_executable(aoc_2023 ${SOURCES})
