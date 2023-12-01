@@ -21,6 +21,14 @@ std::vector<std::string> Split(const std::string &str, const char delimiter);
  */
 std::vector<std::string> *Get_File_Contents(const std::string &filename);
 
+/* Get Solution Test Case File Path
+ * @param day - advent calendar day
+ * @param useSampleTxtFile - Any non zero value is True. Defaults to 0 for input
+ * txt file
+ * @returns the file path to the test cases for the given day
+ */
+std::string Get_Solution_Test_Case_File_Path(int day, int useSampleTxtFile);
+
 } // namespace AOC
 
 #endif // AOC_H

@@ -20,3 +20,15 @@ std::vector<std::string> *AOC::Get_File_Contents(const std::string &filename) {
 
   return fileContents;
 }
+
+std::string AOC::Get_Solution_Test_Case_File_Path(int day,
+                                                  int useSampleTxtFile) {
+  std::string filePath =
+      std::string("../src/day_") + (day < 10 ? "0" : "") + std::to_string(day);
+
+  if (useSampleTxtFile) {
+    return filePath + "/sample.txt";
+  }
+
+  return filePath + "/input.txt";
+}

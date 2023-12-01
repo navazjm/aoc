@@ -3,9 +3,9 @@
 #include <bits/stdc++.h>
 
 int main(int argc, char *argv[]) {
-  if (argc != 4) {
-    std::cerr << "Usage: " << argv[3]
-              << "<day 1-25> <part 1 or 2> <filename.txt>" << std::endl;
+  if (argc < 3 || argc > 4) {
+    std::cerr
+        << "Usage: <day 1-25> <part 1 or 2> <input or sample data (0 or 1)>\n";
     return 1;
   }
   int day = std::atoi(argv[1]);
@@ -20,7 +20,16 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  std::string filename = argv[3];
+  int useSampleFileTxt = 0;
+  if (argv[3]) {
+    useSampleFileTxt = std::atoi(argv[3]);
+  }
+  if (useSampleFileTxt != 0 && useSampleFileTxt != 1) {
+    std::cerr << "Invalid useInputFileTxt. Please choose either 0 or 1.\n";
+    return 1;
+  }
+  std::string filename =
+      AOC::Get_Solution_Test_Case_File_Path(day, useSampleFileTxt);
   std::vector<std::string> *fileContents = AOC::Get_File_Contents(filename);
   if (!fileContents) {
     std::cerr << "Failed to open the file: " << filename << std::endl;
