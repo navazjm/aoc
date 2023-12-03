@@ -2,7 +2,15 @@
 
 std::vector<std::string> AOC::Split(const std::string &str,
                                     const char delimiter) {
-  return {};
+
+  std::istringstream iss(str);
+  std::vector<std::string> tokens;
+
+  std::string token;
+  while (std::getline(iss, token, delimiter)) {
+    tokens.push_back(token);
+  }
+  return tokens;
 }
 
 std::vector<std::string> *AOC::Get_File_Contents(const std::string &filename) {

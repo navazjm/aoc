@@ -1,5 +1,6 @@
 #include "aoc.h"
 #include "day_01/day_01.h"
+#include "day_02/day_02.h"
 #include <bits/stdc++.h>
 
 int main(int argc, char *argv[]) {
@@ -42,6 +43,12 @@ int main(int argc, char *argv[]) {
       Day_01::Solution_02(fileContents);
     else
       Day_01::Solution_01(fileContents);
+    break;
+  case 2:
+    if (part == 2)
+      Day_02::Solution_02(fileContents);
+    else
+      Day_02::Solution_01(fileContents);
     break;
   default:
     std::cout << "Could not find solution to Day " << day << " Part " << part
