@@ -1,8 +1,5 @@
 #include "day_03.h"
-#include <algorithm>
 #include <bits/stdc++.h>
-#include <cctype>
-#include <string>
 
 bool Is_Adjacent_Special_Char(const std::vector<std::string> *input, int x,
                               int y) {

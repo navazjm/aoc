@@ -1,6 +1,5 @@
 #include "day_02.h"
 #include "aoc.h"
-#include <algorithm>
 #include <bits/stdc++.h>
 
 void Day_02::Solution_01(const std::vector<std::string> *input) {
