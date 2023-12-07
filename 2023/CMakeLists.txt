@@ -13,6 +13,7 @@ set(SOURCES
     src/main.cpp
     src/day_01/day_01.cpp
     src/day_02/day_02.cpp
+    src/day_03/day_03.cpp
     include/aoc.cpp
 )
 
