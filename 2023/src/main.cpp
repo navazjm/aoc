@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]) {
   if (argc < 3 || argc > 4) {
     std::cerr
-        << "Usage: <day 1-25> <part 1 or 2> <input or sample data (0 or 1)>\n";
+        << "Usage: <day (1-25)> <part (1/2)> <input or sample data (0/1)>\n";
     return 1;
   }
   int day = std::atoi(argv[1]);
@@ -23,18 +23,18 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  int useSampleFileTxt = 0;
+  int use_sample_txt_file = 0;
   if (argv[3]) {
-    useSampleFileTxt = std::atoi(argv[3]);
+    use_sample_txt_file = std::atoi(argv[3]);
   }
-  if (useSampleFileTxt != 0 && useSampleFileTxt != 1) {
+  if (use_sample_txt_file != 0 && use_sample_txt_file != 1) {
     std::cerr << "Invalid useInputFileTxt. Please choose either 0 or 1.\n";
     return 1;
   }
   std::string filename =
-      AOC::Get_Solution_Test_Case_File_Path(day, useSampleFileTxt);
-  std::vector<std::string> *fileContents = AOC::Get_File_Contents(filename);
-  if (!fileContents) {
+      AOC::Get_Solution_Test_Case_File_Path(day, use_sample_txt_file);
+  std::vector<std::string> *file_contents = AOC::Get_File_Contents(filename);
+  if (!file_contents) {
     std::cerr << "Failed to open the file: " << filename << std::endl;
     return 1;
   }
@@ -42,34 +42,34 @@ int main(int argc, char *argv[]) {
   switch (day) {
   case 01:
     if (part == 2)
-      Day_01::Solution_02(fileContents);
+      Day_01::Solution_02(file_contents);
     else
-      Day_01::Solution_01(fileContents);
+      Day_01::Solution_01(file_contents);
     break;
   case 02:
     if (part == 2)
-      Day_02::Solution_02(fileContents);
+      Day_02::Solution_02(file_contents);
     else
-      Day_02::Solution_01(fileContents);
+      Day_02::Solution_01(file_contents);
     break;
   case 03:
     if (part == 2)
-      Day_03::Solution_02(fileContents);
+      Day_03::Solution_02(file_contents);
     else
-      Day_03::Solution_01(fileContents);
+      Day_03::Solution_01(file_contents);
     break;
   case 04:
     if (part == 2)
-      Day_04::Solution_02(fileContents);
+      Day_04::Solution_02(file_contents);
     else
-      Day_04::Solution_01(fileContents);
+      Day_04::Solution_01(file_contents);
     break;
   default:
     std::cout << "Could not find solution to Day " << day << " Part " << part
               << ".\n";
   }
 
-  delete fileContents;
+  delete file_contents;
 
   return 0;
 }

@@ -47,13 +47,13 @@ line_number=$((line_number + 1))
 lint_content="if (part == 2)"
 sed -i "${line_number}i\\\t${lint_content}" "$src_abs_path/main.cpp"
 line_number=$((line_number + 1))
-lint_content="  $day_namespace::Solution_02(fileContents);"
+lint_content="  $day_namespace::Solution_02(file_contents);"
 sed -i "${line_number}i\\\t\\${lint_content}" "$src_abs_path/main.cpp"
 line_number=$((line_number + 1))
 lint_content="else"
 sed -i "${line_number}i\\\t${lint_content}" "$src_abs_path/main.cpp"
 line_number=$((line_number + 1))
-lint_content="  $day_namespace::Solution_01(fileContents);"
+lint_content="  $day_namespace::Solution_01(file_contents);"
 sed -i "${line_number}i\\\t\\${lint_content}" "$src_abs_path/main.cpp"
 line_number=$((line_number + 1))
 lint_content="break;"
