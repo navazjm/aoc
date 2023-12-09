@@ -8,4 +8,4 @@ void Solution_01(const std::vector<std::string> *input);
 void Solution_02(const std::vector<std::string> *input);
 } // namespace Day_X
 
-#endif // DAY_0X_H
+#endif // DAY_X_H

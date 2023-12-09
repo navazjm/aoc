@@ -40,25 +40,25 @@ int main(int argc, char *argv[]) {
   }
 
   switch (day) {
-  case 1:
+  case 01:
     if (part == 2)
       Day_01::Solution_02(fileContents);
     else
       Day_01::Solution_01(fileContents);
     break;
-  case 2:
+  case 02:
     if (part == 2)
       Day_02::Solution_02(fileContents);
     else
       Day_02::Solution_01(fileContents);
     break;
-  case 3:
+  case 03:
     if (part == 2)
       Day_03::Solution_02(fileContents);
     else
       Day_03::Solution_01(fileContents);
     break;
-  case 4:
+  case 04:
     if (part == 2)
       Day_04::Solution_02(fileContents);
     else
