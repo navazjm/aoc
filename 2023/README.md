@@ -5,7 +5,33 @@ I am not worried about having the most optimized solution, but rather
 have perseverance to complete each solution. Also, I am not worried about
 making it on the leaderboards, but I won't not be happy if I do..
 
+## Directory Tree
+
+```
+project-root/2023/
+|-- include/
+| |-- aoc.cpp # common utility functions
+| |-- aoc.h
+|-- scripts/
+| |-- add-day.sh # script to automate adding a new day_XX solution
+|-- src/
+| |-- day_XX/
+| | |-- day_XX.cpp
+| | |-- day_XX.h
+| | |-- input.txt
+| | |-- sample.txt
+| |-- main.cpp
+|-- CMakeLists.txt
+|-- README.md
+
+```
+
+*NOTE*: To respect AoC T&C, this repo does not contain any puzzle input files. Also, each 
+AoC user has their own unique puzzle input. Therefore, you will have to create and populate 
+your own input.txt file inside each `src/day_xx` directory. 
+
 ## Build from source
+
 
 - clone the repo
 
