@@ -32,6 +32,7 @@ src_day_cpp_rel_path="src/$day/$day_cpp_file"
 sed -i "${line_number}i\\\t${src_day_cpp_rel_path}" "$root_abs_path/CMakeLists.txt"
 cd "$root_abs_path"/build
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
+cd "$root_abs_path"
 
 # add '#include "day_#/day_#"' to src/main.cpp file
 line_number=$(grep -n "#include <bits/stdc++.h>" "$src_abs_path/main.cpp" | cut -d: -f1)
@@ -58,4 +59,8 @@ sed -i "${line_number}i\\\t\\${lint_content}" "$src_abs_path/main.cpp"
 line_number=$((line_number + 1))
 lint_content="break;"
 sed -i "${line_number}i\\\t${lint_content}" "$src_abs_path/main.cpp"
+
+#open newly created day_#/day_#.cpp file in neovim
+cd "$src_abs_path"
+nvim "$src_abs_path/$day/$day_cpp_file"
 
