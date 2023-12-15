@@ -29,6 +29,23 @@ std::vector<std::string> *Get_File_Contents(const std::string &filename);
  */
 std::string Get_Solution_Test_Case_File_Path(int day, int useSampleTxtFile);
 
+/* Calculate Least Common Multiple of a vector
+ * @param nums - vector of numbers
+ * @returns LCM of the vector
+ */
+template <typename T> T LCM(const std::vector<T> &nums) {
+  if (nums.empty()) {
+    return 0;
+  }
+
+  T res = nums[0];
+  for (size_t i = 1; i < nums.size(); ++i) {
+    res = (res * nums[i]) / std::gcd(res, nums[i]);
+  }
+
+  return res;
+}
+
 } // namespace AOC
 
 #endif // AOC_H

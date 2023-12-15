@@ -6,6 +6,7 @@
 #include "day_05/day_05.h"
 #include "day_06/day_06.h"
 #include "day_07/day_07.h"
+#include "day_08/day_08.h"
 #include <bits/stdc++.h>
 
 int main(int argc, char *argv[]) {
@@ -43,48 +44,54 @@ int main(int argc, char *argv[]) {
   }
 
   switch (day) {
-  case 01:
+  case 1:
     if (part == 2)
       Day_01::Solution_02(file_contents);
     else
       Day_01::Solution_01(file_contents);
     break;
-  case 02:
+  case 2:
     if (part == 2)
       Day_02::Solution_02(file_contents);
     else
       Day_02::Solution_01(file_contents);
     break;
-  case 03:
+  case 3:
     if (part == 2)
       Day_03::Solution_02(file_contents);
     else
       Day_03::Solution_01(file_contents);
     break;
-  case 04:
+  case 4:
     if (part == 2)
       Day_04::Solution_02(file_contents);
     else
       Day_04::Solution_01(file_contents);
     break;
-  case 05:
-	if (part == 2)
-	  Day_05::Solution_02(file_contents);
-	else
-	  Day_05::Solution_01(file_contents);
-	break;
-  case 06:
-	if (part == 2)
-	  Day_06::Solution_02(file_contents);
-	else
-	  Day_06::Solution_01(file_contents);
-	break;
-  case 07:
-	if (part == 2)
-	  Day_07::Solution_02(file_contents);
-	else
-	  Day_07::Solution_01(file_contents);
-	break;
+  case 5:
+    if (part == 2)
+      Day_05::Solution_02(file_contents);
+    else
+      Day_05::Solution_01(file_contents);
+    break;
+  case 6:
+    if (part == 2)
+      Day_06::Solution_02(file_contents);
+    else
+      Day_06::Solution_01(file_contents);
+    break;
+  case 7:
+    if (part == 2)
+      Day_07::Solution_02(file_contents);
+    else
+      Day_07::Solution_01(file_contents);
+    break;
+  case 8:
+    if (part == 2)
+      Day_08::Solution_02(file_contents);
+    else
+      Day_08::Solution_01(file_contents);
+    break;
   default:
     std::cout << "Could not find solution to Day " << day << " Part " << part
               << ".\n";
