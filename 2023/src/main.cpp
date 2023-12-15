@@ -35,11 +35,11 @@ int main(int argc, char *argv[]) {
     std::cerr << "Invalid useInputFileTxt. Please choose either 0 or 1.\n";
     return 1;
   }
-  std::string filename =
+  std::string file_name =
       AOC::Get_Solution_Test_Case_File_Path(day, use_sample_txt_file);
-  std::vector<std::string> *file_contents = AOC::Get_File_Contents(filename);
+  std::vector<std::string> *file_contents = AOC::Get_File_Contents(file_name);
   if (!file_contents) {
-    std::cerr << "Failed to open the file: " << filename << std::endl;
+    std::cerr << "Failed to open the file: " << file_name << std::endl;
     return 1;
   }
 
