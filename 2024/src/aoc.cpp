@@ -1,4 +1,5 @@
 #include "aoc.h"
+#include <optional>
 
 std::vector<std::string> AOC::Split(const std::string &str, const char delimiter) {
 
@@ -12,16 +13,16 @@ std::vector<std::string> AOC::Split(const std::string &str, const char delimiter
     return tokens;
 }
 
-std::vector<std::string> *AOC::Get_File_Contents(const std::string &file_name) {
+std::optional<std::vector<std::string>> AOC::Get_File_Contents(const std::string &file_name) {
     std::ifstream file(file_name);
     if (!file.is_open()) {
-        return nullptr;
+        return std::nullopt;
     }
 
-    std::vector<std::string> *file_contents = new std::vector<std::string>;
+    std::vector<std::string> file_contents;
     std::string line;
     while (std::getline(file, line)) {
-        file_contents->push_back(line);
+        file_contents.push_back(line);
     }
     file.close();
 
@@ -29,7 +30,7 @@ std::vector<std::string> *AOC::Get_File_Contents(const std::string &file_name) {
 }
 
 std::string AOC::Get_Solution_Test_Case_File_Path(int day, bool use_sample_txt_file) {
-    std::string filePath = std::string("../src/day_") + (day < 10 ? "0" : "") + std::to_string(day);
+    std::string filePath = std::string("./src/day_") + (day < 10 ? "0" : "") + std::to_string(day);
 
     if (use_sample_txt_file) {
         return filePath + "/sample.txt";

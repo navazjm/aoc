@@ -19,7 +19,7 @@ std::vector<std::string> Split(const std::string &str, const char delimiter);
  * @returns the content of the file where each index matches to the
  * corresponding line
  */
-std::vector<std::string> *Get_File_Contents(const std::string &file_name);
+std::optional<std::vector<std::string>> Get_File_Contents(const std::string &file_name);
 
 /* Get Solution Test Case File Path
  * @param day - advent calendar day

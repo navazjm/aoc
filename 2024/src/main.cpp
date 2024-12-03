@@ -1,4 +1,5 @@
 #include "aoc.h"
+#include "day_01/day_01.h"
 #include <bits/stdc++.h>
 
 int main(int argc, char *argv[]) {
@@ -23,12 +24,12 @@ int main(int argc, char *argv[]) {
         use_sample_txt_file = std::atoi(argv[3]);
     }
     if (use_sample_txt_file != 0 && use_sample_txt_file != 1) {
-        std::cerr << "Invalid useInputFileTxt. Please choose either 0 or 1.\n";
+        std::cerr << "Invalid value for determing if using sample.txt. Please choose either 0 or 1.\n";
         return 1;
     }
     std::string file_name = AOC::Get_Solution_Test_Case_File_Path(day, use_sample_txt_file == 1);
-    std::vector<std::string> *file_contents = AOC::Get_File_Contents(file_name);
-    if (!file_contents) {
+    auto file_contents = AOC::Get_File_Contents(file_name);
+    if (!file_contents.has_value()) {
         std::cerr << "Failed to open the file: " << file_name << std::endl;
         return 1;
     }
