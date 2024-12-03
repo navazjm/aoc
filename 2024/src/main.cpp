@@ -34,8 +34,16 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    /* Day_01::Solution_02(file_contents); */
-    delete file_contents;
+    switch (day) {
+    case 1:
+        if (part == 2)
+            Day_01::Solution_02(file_contents.value());
+        else
+            Day_01::Solution_01(file_contents.value());
+        break;
+    default:
+        std::cout << "Could not find solution to Day " << day << " Part " << part << ".\n";
+    }
 
     return 0;
 }
