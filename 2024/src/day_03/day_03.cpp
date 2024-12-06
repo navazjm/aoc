@@ -1,5 +1,4 @@
 #include "day_03.h"
-#include <bits/stdc++.h>
 
 void Day_03::Solution_01(const std::vector<std::string> &input) {
     std::regex mul_pattern(R"(mul\((\d{1,3}),(\d{1,3})\))");

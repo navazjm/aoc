@@ -1,6 +1,5 @@
 #include "day_01.h"
 #include "../aoc.h"
-#include <bits/stdc++.h>
 
 void Day_01::Solution_01(const std::vector<std::string> &input) {
     const int size = input.size();
