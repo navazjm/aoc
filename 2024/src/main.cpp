@@ -5,6 +5,7 @@
 #include "day_04/day_04.h"
 #include "day_05/day_05.h"
 #include "day_06/day_06.h"
+#include "day_07/day_07.h"
 #include <bits/stdc++.h>
 
 int main(int argc, char *argv[]) {
@@ -75,6 +76,12 @@ int main(int argc, char *argv[]) {
             Day_06::Solution_02(file_contents.value());
         else
             Day_06::Solution_01(file_contents.value());
+        break;
+    case 7:
+        if (part == 2)
+            Day_07::Solution_02(file_contents.value());
+        else
+            Day_07::Solution_01(file_contents.value());
         break;
     default:
         std::cout << "Could not find solution to Day " << day << " Part " << part << ".\n";
