@@ -21,6 +21,7 @@ set(SOURCES
     src/day_07/day_07.cpp
     src/day_08/day_08.cpp
     src/day_09/day_09.cpp
+    src/day_10/day_10.cpp
 )
 
 # Exclude the template folder
